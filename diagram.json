@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "ZIDEN ABDELLAOUI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 73.4,
+      "left": 297.6,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -180.9,
+      "left": 82.3,
+      "attrs": { "distance": "2" }
+    },
+    { "type": "board-nokia-5110", "id": "lcd1", "top": -11.34, "left": 562.62, "attrs": {} }
+  ],
+  "connections": [
+    [ "btn1:1.r", "uno:2", "blue", [ "v-96", "h-128.7" ] ],
+    [ "ultrasonic1:GND", "uno:GND.1", "black", [ "v9.6", "h-49.2" ] ],
+    [ "ultrasonic1:TRIG", "uno:9", "green", [ "v28.8", "h-0.4" ] ],
+    [ "ultrasonic1:ECHO", "uno:8", "green", [ "v28.8", "h8.4" ] ],
+    [ "lcd1:RST", "uno:4", "green", [ "v15.23", "h-57.6", "v-192", "h-339.9" ] ],
+    [ "lcd1:CE", "uno:10", "green", [ "v24.83", "h-76.8", "v-220.8", "h-394.3" ] ],
+    [ "lcd1:DIN", "uno:11", "green", [ "v44.03", "h-115.2", "v-249.6", "h-384.6" ] ],
+    [ "lcd1:CLK", "uno:13", "green", [ "v53.63", "h-134.4", "v-268.8", "h-394" ] ],
+    [ "uno:3.3V", "lcd1:VCC", "red", [ "v76.7", "h263.4" ] ],
+    [ "lcd1:DC", "uno:7", "green", [ "v34.43", "h-96", "v-220.8", "h-349.2" ] ],
+    [ "uno:5V", "ultrasonic1:VCC", "red", [ "v28.7", "h-245.8", "v-288" ] ],
+    [ "btn1:2.l", "uno:GND.3", "green", [ "h-9.6", "v115.4", "h-105.6" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "v149.63", "h-518.4", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
